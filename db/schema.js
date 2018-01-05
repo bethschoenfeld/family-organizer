@@ -45,6 +45,8 @@ const FamilySchema = new Schema(
             type: String,
             required: [true, 'Need username!']
         },
-
+    {
+        members: [ MemberSchema ]
+    }
     }
 )
