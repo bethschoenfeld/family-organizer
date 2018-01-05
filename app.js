@@ -1,18 +1,18 @@
 require('dotenv').config()
 
-const express = require('express');
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
-const index = require('./routes/index');
-const users = require('./routes/users');
+var index = require('./routes/index');
+var users = require('./routes/users');
 
-const app = express();
+var app = express();
 
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI); 
 
 mongoose.connection.once('open', () => {
@@ -36,7 +36,7 @@ app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  const err = new Error('Not Found');
+  var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
