@@ -2,6 +2,6 @@
 const mongoose = require('mongoose')
 const Schema = require('../schema')
 
-const Gift = mongoose.model('Gift', Schema.GiftSchema)
+const Activity = mongoose.model('Activity', Schema.ActivitySchema)
 
-module.exports = Gift
+module.exports = Activity

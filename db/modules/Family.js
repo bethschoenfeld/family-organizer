@@ -1,6 +1,6 @@
 onst mongoose = require('mongoose')
 const Schema = require('../Schema')
  
-const User = mongoose.model('User', Schema.UserSchema)
+const Family = mongoose.model('Family', Schema.FamilySchema)
 
-module.exports = User
+module.exports = Family

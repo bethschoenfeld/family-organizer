@@ -2,6 +2,6 @@
 const mongoose = require('mongoose')
 const Schema = require('../schema')
 
-const Store = mongoose.model('Store', Schema.StoreSchema)
+const Member = mongoose.model('Member', Schema.MemberSchema)
 
-module.exports = Store
+module.exports = Member
