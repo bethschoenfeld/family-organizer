@@ -15,7 +15,11 @@ const ActivitySchema = new Schema(
         location: {
             type: String
         }
+    },
+    {
+        timestamps: {}
     }
+
 )
 
 const MemberSchema = new Schema(
@@ -27,6 +31,9 @@ const MemberSchema = new Schema(
         gender: {
             type: String
         }
+    },
+    {
+        timestamps: {}
     }
 
 )
