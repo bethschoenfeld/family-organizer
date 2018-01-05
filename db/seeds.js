@@ -20,11 +20,10 @@ mongoose.connection.on('error', (error) => {
 Family.remove({}).then(() => {
     const schoenfeld = new Family ({
         username: 'Schoenfeld',
-        email: 'schoenfeld@family.com'
     })
     const tiberius = new Member({
         name: 'Tiberius the Fierce',
-        gender: 'male'
+        gender: 'male',
     })
     const chaseLaser = new Activity({
         title: 'Chase red dot',
