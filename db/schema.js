@@ -31,7 +31,7 @@ const MemberSchema = new Schema(
         gender: {
             type: String
         },
-        activities: [ ActivitiesSchema ]
+        activities: [ActivitiesSchema]
     },
     {
         timestamps: {}
@@ -45,8 +45,16 @@ const FamilySchema = new Schema(
             type: String,
             required: [true, 'Need username!']
         },
+        members: [MemberSchema]
+    },
     {
-        members: [ MemberSchema ]
-    }
+        timestamps: {},
+        usePushEach: true
     }
 )
+
+module.exports = {
+    FamilySchema,
+    MemberSchema,
+    ActivitiesSchema
+}
