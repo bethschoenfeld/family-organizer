@@ -15,4 +15,18 @@ const ActivitySchema = new Schema(
         location: {
             type: String
         }
+    }
+)
+
+const MemberSchema = new Schema(
+    {
+        name: {
+            type: String,
+            required: [true, 'Need a name!']
+        },
+        gender: {
+            type: String
+        }
+    }
+
 )
