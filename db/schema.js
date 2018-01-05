@@ -30,10 +30,21 @@ const MemberSchema = new Schema(
         },
         gender: {
             type: String
-        }
+        },
+        activities: [ ActivitiesSchema ]
     },
     {
         timestamps: {}
     }
 
+)
+
+const FamilySchema = new Schema(
+    {
+        username: {
+            type: String,
+            required: [true, 'Need username!']
+        },
+
+    }
 )
