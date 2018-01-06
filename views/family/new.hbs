@@ -1,30 +1,27 @@
-<div class="stepper">
-    <a href="/family">Home</a> / New Family
+<a href="/family">
+    Home</a> / New Family
+<h2>User Info</h2>
+<div>
+    <form action="/family" method="POST">
+        <div class="form-input">
+            <label for="username">Username</label>
+            <input type="text" name="username" required/>
+        </div>
+
+        <div class="form-input">
+            <label for="email">Email</label>
+            <input type="text" name="email" />
+        </div>
+
+        <div class="form-input">
+            <label for="name">Family Name</label>
+            <input type="text" name="FamilyName" required/>
+        </div>
+
+        <div class="button-container">
+            <input class="button primary" type="submit" value="Create Family">
+            <a href="/family" class="button warning">Cancel</a>
+        </div>
+    </form>
 </div>
-<div class="card">
-
-    <h2>User Info</h2>
-    <div>
-        <form action="/family" method="POST">
-            <div class="form-input">
-                <label for="username">Username</label>
-                <input type="text" name="username" required/>
-            </div>
-
-            <div class="form-input">
-                <label for="email">Email</label>
-                <input type="text" name="email" />
-            </div>
-
-            <div class="form-input">
-                <label for="name">Family Name</label>
-                <input type="text" name="FamilytName" required/>
-            </div>
-
-            <div class="button-container flex-end">
-                <input class="button primary" type="submit" value="Create Family">
-                <a href="/family" class="button warning">Cancel</a>
-            </div>
-        </form>
-    </div>
 </div>
