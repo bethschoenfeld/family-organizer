@@ -21,7 +21,7 @@ app.use(methodOverride('_method'))
 
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.MONGODB_URI, {
-  useMongoClient: true
+//  useMongoClient: true
 })
 
 mongoose.connection.once('open', () => {
@@ -40,14 +40,14 @@ const familyController = require('./controllers/familyController')
 app.use('/family', familyController)
 
 const memberController = require('./controllers/memberController')
-app.use('/family/:familyId/members', memberController)
+//app.use('/family/:familyId/members', memberController)
 
 const activityController = require('./controllers/activityController')
-app.use('/family/:familyId/members/:memberId/activity', activityController)
+//app.use('/family/:familyId/members/:memberId/activity', activityController)
 
 
 app.get('/', (req,res) => {
-  response.redirect('/family')
+  res.redirect('/family')
 })
 
 module.exports = app;
