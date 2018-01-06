@@ -1,4 +1,5 @@
-require('dotenv').congfig()
+require('dotenv').config()
+
 const Family = require('./models/Family')
 const Member = require('./models/Members')
 const Activity = require('./models/Activty')
@@ -18,7 +19,7 @@ mongoose.connection.on('error', (error) => {
 })
 
 Family.remove({}).then(() => {
-    const schoenfeld = new Family ({
+    const schoenfeld = new Family({
         username: 'Schoenfeld',
     })
     const tiberius = new Member({
