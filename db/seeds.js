@@ -1,11 +1,11 @@
 require('dotenv').config()
 
 const Family = require('./models/Family')
-const Member = require('./models/Members')
-const Activity = require('./models/Activty')
+const Member = require('./models/Member')
+const Activity = require('./models/Activity')
 const mongoose = require('mongoose')
 
-mongoose.connect(process.eventNames.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
     useMongoClient: true
 })
 

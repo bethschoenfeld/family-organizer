@@ -31,7 +31,7 @@ const MemberSchema = new Schema(
         gender: {
             type: String
         },
-        activities: [ActivitiesSchema]
+        activities: [ActivitySchema]
     },
     {
         timestamps: {}
@@ -56,5 +56,5 @@ const FamilySchema = new Schema(
 module.exports = {
     FamilySchema,
     MemberSchema,
-    ActivitiesSchema
+    ActivitySchema
 }
