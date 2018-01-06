@@ -1,2 +1,18 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<p>Welcome to {{title}}</p> Home
+</div>
+    <div class="user-cards">
+        {{#each users}}
+        <a href="/family/{{this._id}}" class="link user-card">
+            <div class="profile-name">
+                {{this.familyName}}
+            </div>
+        </a>
+        {{/each}}
+    </div>
+
+    <div class="button primary">
+        <a href="/family/new">
+            Add a Family
+        </a>
+</div>
