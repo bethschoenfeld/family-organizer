@@ -7,12 +7,17 @@ router.get('/', (req,res) => {
         .then((family) => {
             res.render('family/index', {
                 family,
-                pageTitle: 'Family Page'
+                title: 'Family Organizer'
             })
         })
         .catch((error) => {
             console.log(error)
         })
 }) 
+
+router.get('/new', (req,res) => {
+    res.render('family/new', {title: 'Make a new Family'})
+})
+
 
 module.exports = router
