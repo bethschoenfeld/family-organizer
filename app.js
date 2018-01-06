@@ -40,7 +40,7 @@ const familyController = require('./controllers/familyController')
 app.use('/family', familyController)
 
 const memberController = require('./controllers/memberController')
-app.use('/family/:familyId/members', membersController)
+app.use('/family/:familyId/members', memberController)
 
 const activityController = require('./controllers/activityController')
 app.use('/family/:familyId/members/:memberId/activity', activityController)
@@ -48,12 +48,6 @@ app.use('/family/:familyId/members/:memberId/activity', activityController)
 
 app.get('/', (req,res) => {
   response.redirect('/family')
-})
-
-
-const PORT = process.env.PORT || 3000
-app.listen(PORT, () => {
-  console.log(`Express app listening on port ${PORT}`)
 })
 
 module.exports = app;
