@@ -61,5 +61,17 @@ router.get('/:familyId/edit', (req,res) => {
     })
 })
 
+router.get('/:familyId/delete', (req,res) => {
+    const familyId = req.params.familyId
+
+    Family.findByIdAndRemove(familyId)
+    .then(() => {
+        re.redirect('/family')
+    })
+    .catch((error) => {
+        consosle.log(error)
+    })
+})
+
 
 module.exports = router
