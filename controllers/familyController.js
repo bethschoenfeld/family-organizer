@@ -16,7 +16,9 @@ router.get('/', (req, res) => {
 })
 
 router.get('/new', (req, res) => {
-    res.render('family/new', { title: 'Make a new Family' })
+    res.render('family/new', {
+        title: 'Make a new Family'
+    })
 })
 
 router.post('/', (req, res) => {
@@ -25,6 +27,19 @@ router.post('/', (req, res) => {
     Family.create(newFamily)
         .then(() => {
             res.redirect('/family')
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+})
+router.get('/:familyId', (req, res) => {
+    const familyId = req.params.familyId
+    Family.findById(familyId)
+        .then((family) => {
+            res.render('family/show', {
+                family,
+                title: family.familyName
+            })
         })
         .catch((error) => {
             console.log(error)
