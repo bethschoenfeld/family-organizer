@@ -46,45 +46,41 @@ router.get('/:familyId', (req, res) => {
         })
 })
 
-router.get('/:familyId/edit', (req,res) => {
+router.get('/:familyId/edit', (req, res) => {
     const familyId = req.params.familyId
 
     Family.findById(familyId)
-    .then((family) => {
-        res.render('family/edit', {
-            family,
-            title: 'Family Update'
+        .then((family) => {
+            res.render('family/edit', {
+                family,
+                title: 'Family Update'
+            })
         })
-    })
-    .catch((error) => {
-        console.log(error)
-    })
+        .catch((error) => {
+            console.log(error)
+        })
 })
 
-router.put('/:familyId/edit', (req,res) => {
+router.put('/:familyId', (req, res) => {
     const familyId = req.params.familyId
     const updatedFamilyInfo = req.body
 
     Family.findByIdAndUpdate(familyId, updatedFamilyInfo, {new: true})
-    .then(() => {
-        res.redirect(`/family/${familyId}`)
-    })
+        .then(() => {
+            res.redirect(`/family/${familyId}`)
+        })
 })
 
-router.get('/:familyId/delete', (req,res) => {
+router.get('/:familyId/delete', (req, res) => {
     const familyId = req.params.familyId
 
     Family.findByIdAndRemove(familyId)
-    .then(() => {
-        re.redirect('/family')
-    })
-    .catch((error) => {
-        consosle.log(error)
-    })
+        .then(() => {
+            res.redirect('/family')
+        })
+        .catch((error) => {
+            consosle.log(error)
+        })
 })
-
-
-
-
 
 module.exports = router
