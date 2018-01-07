@@ -1,0 +1,24 @@
+<div>
+  <a href="/family">Home</a> /
+  <a href="/family/{{familyId}}">Profile</a> / Members
+</div>
+<div>
+  <h1>{{familyName}}'s Members</h1>
+  <div class="button primary">
+    <a href="/family/{{familyId}}/member/new">Add a New Member</a>
+  </div>
+</div>
+
+<div>
+  {{#each member}}
+  <div>
+    <a class="cancel" href="/family/{{../familyId}}/members/{{this._id}}/delete">X</a>
+    <a href="/family/{{../familyId}}/members/{{this._id}}">
+      <h3>{{this.name}}</h3>
+    </a>
+    <p>{{this.gender}}</p>
+
+
+  </div>
+  {{/each}}
+</div>
