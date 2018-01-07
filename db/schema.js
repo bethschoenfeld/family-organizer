@@ -28,8 +28,8 @@ const MemberSchema = new Schema(
             type: String,
             required: [true, 'Need a name!']
         },
-        gender: {
-            type: String
+        age: {
+            type: Number
         },
         activities: [ActivitySchema]
     },

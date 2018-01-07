@@ -40,7 +40,7 @@ const familyController = require('./controllers/familyController')
 app.use('/family', familyController)
 
 const memberController = require('./controllers/memberController')
-//app.use('/family/:familyId/members', memberController)
+app.use('/family/:familyId/members', memberController)
 
 const activityController = require('./controllers/activityController')
 //app.use('/family/:familyId/members/:memberId/activity', activityController)

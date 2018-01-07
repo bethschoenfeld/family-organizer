@@ -6,9 +6,10 @@ const Family = require('../db/models/Family')
 router.get('/', (req,res) => {
     const familyId = req.params.familyId
 
-    familyId.findById(familyId)
+    Family.findById(familyId)
     .then((family) => {
-        res.render('/member/index', {
+        res.render('member/index', {
+            family,
             familyId: Family._id,
             member: family.member,
             title: 'Member Page'
@@ -18,3 +19,15 @@ router.get('/', (req,res) => {
         console.log(error)
     })
 })
+
+router.get('/new', (req,res) => {
+    const familyId = req.params.familyId
+
+    res.render('members/new', {
+        family,
+        familyId,
+        title: 'New Member'
+    })
+})
+
+module.exports = router
