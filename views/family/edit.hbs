@@ -1,0 +1,25 @@
+<div>
+    <a href="/family">Home</a> /
+    <a href="/family/{{family._id}}">Profile</a> / Edit Profile
+</div>
+<h2>Edit Family Profile</h2>
+<div>
+    <form action="/family/{{family._id}}?_method=PUT" method="POST">
+        <div>
+            <label for="family">Family:</label>
+            <input type="text" name="Family" value="{{family.familyName}}" required/>
+        </div>
+        <div class="form-input">
+            <label for="email">Email:</label>
+            <input type="text" name="email" value="{{family.email}}" />
+        </div>
+        <div class="form-input">
+            <label for="familyName">Family Name:</label>
+            <input type="text" name="FamilyName" value="{{family.familyName}}" required/>
+        </div>
+        <div>
+            <input type="submit" value="Update Profile">
+            <a href="/family/{{family._id}}">Cancel</a>
+
+    </form>
+    </div>

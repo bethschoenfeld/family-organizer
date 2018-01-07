@@ -46,4 +46,20 @@ router.get('/:familyId', (req, res) => {
         })
 })
 
+router.get('/:familyId/edit', (req,res) => {
+    const familyId = req.params.familyId
+
+    Family.findById(familyId)
+    .then((family) => {
+        res.render('family/edit', {
+            family,
+            title: 'Family Update'
+        })
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+})
+
+
 module.exports = router
