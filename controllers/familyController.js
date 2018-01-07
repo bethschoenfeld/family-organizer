@@ -61,6 +61,16 @@ router.get('/:familyId/edit', (req,res) => {
     })
 })
 
+router.put('/:familyId/edit', (req,res) => {
+    const familyId = req.params.familyId
+    const updatedFamilyInfo = req.body
+
+    Family.findByIdAndUpdate(familyId, updatedFamilyInfo, {new: true})
+    .then(() => {
+        res.redirect(`/family/${familyId}`)
+    })
+})
+
 router.get('/:familyId/delete', (req,res) => {
     const familyId = req.params.familyId
 
@@ -72,6 +82,9 @@ router.get('/:familyId/delete', (req,res) => {
         consosle.log(error)
     })
 })
+
+
+
 
 
 module.exports = router
