@@ -29,6 +29,24 @@ router.get('/new', (req,res) => {
     })
 })
 
+router.get('/:memberId', (req,res) => {
+    const familyId = req.params.familyId
+    const memberId = req.params.memberId
+
+    Family.findById(familyId)
+    .then((family) => {
+        const member = family.members.id(memberId)
+        res.render('member/show', {
+            familyId,
+            member,
+            title: 'Edit Page'
+        })
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+})
+
 router.post('/', (req,res) => {
     const familyId = req.params.familyId
     const newMember = req.body
@@ -45,6 +63,23 @@ router.post('/', (req,res) => {
     .catch((error) => {
         console.log(error)
     })
+})
+
+router.get('/:memberId/delete', (req,res) => {
+    const familyId = req.params.familyId
+    const memberId = req.params.memberId
+
+    Family.findById(familyId)
+        .then((family) => {
+            family.members.id(memberId).remove()
+            return family.save()
+        })
+        .then(() => {
+            res.redirect(`/family/${familyId}/members/`)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
 })
 
 module.exports = router
