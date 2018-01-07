@@ -10,7 +10,7 @@ router.get('/', (req,res) => {
     .then((family) => {
         res.render('member/index', {
             family,
-            familyId: Family._id,
+            familyId: family._id,
             member: family.member,
             title: 'Member Page'
         })
@@ -23,8 +23,7 @@ router.get('/', (req,res) => {
 router.get('/new', (req,res) => {
     const familyId = req.params.familyId
 
-    res.render('members/new', {
-        family,
+    res.render('member/new', {
         familyId,
         title: 'New Member'
     })
