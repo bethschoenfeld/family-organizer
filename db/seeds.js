@@ -20,7 +20,7 @@ mongoose.connection.on('error', (error) => {
 
 Family.remove({}).then(() => {
     const schoenfeld = new Family({
-        username: 'Schoenfeld',
+        familyName: 'Schoenfeld',
     })
     const tiberius = new Member({
         name: 'Tiberius the Fierce',

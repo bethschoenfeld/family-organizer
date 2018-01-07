@@ -1,18 +1,17 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p> Home
+<p>Welcome to {{title}}</p> 
 </div>
-    <div class="user-cards">
-        {{#each users}}
-        <a href="/family/{{this._id}}" class="link user-card">
-            <div class="profile-name">
+    <div>
+        {{#each family}}
+        <a href="/family/{{this._id}}">
                 {{this.familyName}}
-            </div>
         </a>
         {{/each}}
     </div>
 
-    <div class="button primary">
+    <div>
         <a href="/family/new">
             Add a Family
         </a>
+    </div>
 </div>

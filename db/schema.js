@@ -41,10 +41,11 @@ const MemberSchema = new Schema(
 
 const FamilySchema = new Schema(
     {
-        username: {
+        familyName: {
             type: String,
             required: [true, 'Need username!']
         },
+        
         members: [MemberSchema]
     },
     {
