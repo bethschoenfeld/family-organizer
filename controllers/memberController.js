@@ -11,7 +11,7 @@ router.get('/', (req,res) => {
         res.render('member/index', {
             family,
             familyId: family._id,
-            member: family.member,
+            member: family.members,
             title: 'Member Page'
         })
     })
@@ -26,6 +26,24 @@ router.get('/new', (req,res) => {
     res.render('member/new', {
         familyId,
         title: 'New Member'
+    })
+})
+
+router.post('/', (req,res) => {
+    const familyId = req.params.familyId
+    const newMember = req.body
+        console.log(familyId, newMember)
+
+    Family.findById(familyId)
+    .then((family) => {
+        family.members.push(newMember)
+        return family.save()
+    })
+    .then(() => {
+    res.redirect(`/family/${familyId}/members`)
+    })
+    .catch((error) => {
+        console.log(error)
     })
 })
 

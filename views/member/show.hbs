@@ -1,0 +1,29 @@
+<div>
+    <a href="/family">Home</a> /
+    <a href="/family/{{familyId}}">Profile</a> /
+    <a href="/family/{{familyId}}/members">Members</a> / {{member.name}}
+</div>
+<div>
+    <div>
+        <h1>{{member.name}}</h1>
+        <h3>{{member.age}</h3>
+    </div>
+    <a class="button warning" href="/family/{{familyId}}/members/{{family._id}}/delete">Delete</a>
+</div>
+
+<div>
+    <div>
+        <h3>Activities:</h3>
+        <a class="button primary" href="/family/{{familyId}}/members/{{member._id}}/activities/new">Add an activity</a>
+    </div>
+    <div>
+
+        <div>
+            {{#each member.activity}}
+            <div>
+                <a href="/family/{{../familyId}}/members/{{../member._id}}/activities/{{this._id}}">
+                    {{this.title}}
+                </a>
+            </div>
+            {{/each}}
+        </div>

@@ -24,7 +24,7 @@ Family.remove({}).then(() => {
     })
     const tiberius = new Member({
         name: 'Tiberius the Fierce',
-        gender: 'male',
+        age: 2,
     })
     const chaseLaser = new Activity({
         title: 'Chase red dot',
@@ -35,7 +35,7 @@ Family.remove({}).then(() => {
 
     const braille = new Member({
         name: 'Braille',
-        gender: 'female'
+        age: 3
     })
     const nap = new Activity({
         title: 'Nap',

@@ -29,7 +29,8 @@ const MemberSchema = new Schema(
             required: [true, 'Need a name!']
         },
         age: {
-            type: Number
+            type: Number,
+            required: [true, 'Need an age']
         },
         activities: [ActivitySchema]
     },

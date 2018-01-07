@@ -12,13 +12,10 @@
 <div>
   {{#each member}}
   <div>
-    <a class="cancel" href="/family/{{../familyId}}/members/{{this._id}}/delete">X</a>
     <a href="/family/{{../familyId}}/members/{{this._id}}">
       <h3>{{this.name}}</h3>
     </a>
     <p>{{this.gender}}</p>
-
-
   </div>
   {{/each}}
 </div>
