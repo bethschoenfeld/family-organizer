@@ -2,9 +2,26 @@
 
 ## Technologies Used
 
-* a
-* b
+* HTML
+* CSS
+* JavaScript
+* Node.js
+* Express.js
+* MongoDB.js
 
 ## Methods
 
+## Unsolved Problems
+
 ### URLs
+#### Trello:
+
+#### Heroku:
+
+#### Github:
+
+#### Wireframes:
+
+#### ERDs:
+
+#### Portfolio:
