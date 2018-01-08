@@ -32,6 +32,7 @@ router.post('/', (req, res) => {
             console.log(error)
         })
 })
+
 router.get('/:familyId', (req, res) => {
     const familyId = req.params.familyId
     Family.findById(familyId)
@@ -69,6 +70,9 @@ router.put('/:familyId', (req, res) => {
         .then(() => {
             res.redirect(`/family/${familyId}`)
         })
+        .catch((error) => {
+            console.log(error)
+        })
 })
 
 router.get('/:familyId/delete', (req, res) => {
@@ -79,7 +83,7 @@ router.get('/:familyId/delete', (req, res) => {
             res.redirect('/family')
         })
         .catch((error) => {
-            consosle.log(error)
+            console.log(error)
         })
 })
 
