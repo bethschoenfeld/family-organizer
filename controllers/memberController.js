@@ -81,17 +81,17 @@ router.post('/', (req,res) => {
         console.log(error)
     })
 })
-
 router.put('/:memberId', (req,res) => {
     const familyId = req.params.familyId
     const memberId = req.params.memberId
     const updatedMember = req.body
+    console.log(familyId, memberId, updatedMember)
 
     Family.findByIdAndUpdate(familyId, updatedMember, {
         new: true
     })
     .then(() => {
-        res.redirect(`/members/${{memberId}}`)
+        res.redirect(`/family/${familyId}/members/${memberId}`)
     })
     .catch((error) => {
         console.log(error)
