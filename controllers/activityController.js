@@ -58,4 +58,25 @@ router.get('/:activityId', (req,res) => {
         })
 })
 
+router.get('/:activityId/delete', (req,res) => {
+    const familyId = req.params.familyId
+    const memberId = req.params.memberId
+    const activityId= req.params.activityId
+
+    Family.findById(familyId)
+        .then((family) => {
+            const member = family.members.id(memberId)
+            const activity = member.activities.id(activityId)
+            member.activities.id(activityId).remove()
+
+            return family.save()
+        })
+        .then(() => {
+            res.redirect(`/family/${familyId}/members/${memberId}`)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+})
+
 module.exports = router
