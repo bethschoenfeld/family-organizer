@@ -49,6 +49,7 @@ router.get('/:activityId', (req,res) => {
             res.render('activity/show', {
                 familyId,
                 member,
+                memberId,
                 activity,
                 title: 'Activities'
             })
