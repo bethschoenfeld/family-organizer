@@ -29,6 +29,23 @@ router.get('/new', (req,res) => {
     })
 })
 
+router.get('/:memberId/edit', (req,res) => {
+    const familyId = req.params.familyId
+    const memberId = req.params.memberId
+
+    Family.findById(familyId)
+    .then((family) => {
+        const member = family.members.id(memberId)
+        res.render('member/edit', {
+            familyId,
+            memberId,
+            member,
+            family,
+            title: 'Edit Page',
+        })
+    })
+})
+
 router.get('/:memberId', (req,res) => {
     const familyId = req.params.familyId
     const memberId = req.params.memberId
@@ -39,7 +56,7 @@ router.get('/:memberId', (req,res) => {
         res.render('member/show', {
             familyId,
             member,
-            title: 'Edit Page'
+            title: 'Show Page',
         })
     })
     .catch((error) => {
@@ -59,6 +76,22 @@ router.post('/', (req,res) => {
     })
     .then(() => {
     res.redirect(`/family/${familyId}/members`)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+})
+
+router.put('/:memberId', (req,res) => {
+    const familyId = req.params.familyId
+    const memberId = req.params.memberId
+    const updatedMember = req.body
+
+    Family.findByIdAndUpdate(familyId, updatedMember, {
+        new: true
+    })
+    .then(() => {
+        res.redirect(`/members/${{memberId}}`)
     })
     .catch((error) => {
         console.log(error)

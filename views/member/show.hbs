@@ -6,15 +6,21 @@
 <div>
     <div>
         <h1>{{member.name}}</h1>
-        <h3>{{member.age}}</h3>
+        <h3>Age: {{member.age}}</h3>
     </div>
-    <a class="button warning" href="/family/{{familyId}}/members/{{family._id}}/delete">Delete</a>
+
 </div>
 
 <div>
     <div>
         <h3>Activities:</h3>
         <a class="button primary" href="/family/{{familyId}}/members/{{member._id}}/activities/new">Add an activity</a>
+    </div>
+    <div>
+    <a class="button warning" href="/family/{{familyId}}/members/{{member._id}}/delete">Delete</a>
+    </div>
+    <div>
+    <a class="button primary" href="/family/{{familyId}}/members/{{member._id}}/edit">Edit</a>
     </div>
     <div>
 
