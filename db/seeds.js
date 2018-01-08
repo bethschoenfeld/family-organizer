@@ -29,7 +29,6 @@ Family.remove({}).then(() => {
     const chaseLaser = new Activity({
         title: 'Chase red dot',
         description: 'My nemisis the red dot needs to be taken out',
-        location: 'My palace'
     })
     tiberius.activities.push(chaseLaser)
 
@@ -40,7 +39,6 @@ Family.remove({}).then(() => {
     const nap = new Activity({
         title: 'Nap',
         description: 'Nap in my favorite chair',
-        location: 'living Room'
 
     })
     braille.activities.push(nap)

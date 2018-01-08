@@ -27,7 +27,7 @@ router.post('/', (req,res) => {
     Family.findById(familyId)
     .then((family) => {
         const member = family.members.id(memberId)
-        member.activity.push(newActivity)
+        member.activities.push(newActivity)
 
         return family.save()
     })
@@ -44,9 +44,9 @@ router.get('/:activityId', (req,res) => {
     Family.findById(familyId)
         .then((family) => {
             const member = family.members.id(memberId)
-            const activity = member.activity.id(activityId)
+            const activity = member.activities.id(activityId)
 
-            res.render('/activity/show', {
+            res.render('activity/show', {
                 familyId,
                 member,
                 activity,

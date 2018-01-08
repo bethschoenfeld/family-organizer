@@ -12,9 +12,6 @@ const ActivitySchema = new Schema(
         description: {
             type: String
         },
-        location: {
-            type: String
-        }
     },
     {
         timestamps: {}
